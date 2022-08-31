@@ -1,6 +1,7 @@
 LIGHT = """
 QWidget{
 	background-color: rgb(240, 240, 240);
+	color: rgb(0,0,0);
 
 }
 #menuLateral{
@@ -49,6 +50,7 @@ QWidget{
 DARK = """
 QWidget{
 	background-color: rgb(25, 25, 25);
+	color: rgb(240, 240, 240);
 	
 }
 #menuLateral{
