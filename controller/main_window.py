@@ -12,7 +12,12 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         uic.loadUi(FILE_UI, self)  
         
+        self.setStyleSheet(LIGHT)
+        
         self.pageHome = Home()
+        #self.pageReceita = 
+        #self.pageDespesa = 
+        
         
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageReceita)
@@ -33,11 +38,11 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
         if btnName == "homeBtn":
-            self.stackedWidget.setCurrentIndex(0)
-        if btnName == "receitaBtn":
             self.stackedWidget.setCurrentIndex(1)
-        if btnName == "despesaBtn":
+        if btnName == "receitaBtn":
             self.stackedWidget.setCurrentIndex(2)
+        if btnName == "despesaBtn":
+            self.stackedWidget.setCurrentIndex(3)
         
         if btnName == 'themeBtn':
             self.checkButton()

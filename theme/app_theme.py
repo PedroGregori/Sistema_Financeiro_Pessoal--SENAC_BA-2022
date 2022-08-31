@@ -1,12 +1,29 @@
 LIGHT = """
-#frame{
-	background-color: rgb(240, 240, 250);
+QWidget{
+	background-color: rgb(240, 240, 240);
 
 }
 #menuLateral{
-	background-color: rgb(245, 245, 245);
+	background-color: rgb(250, 250, 250);
 	border-radius: 10px;
 }
+
+#menuCenter{
+	background-color: rgb(250, 250, 250);
+}
+
+#menuTop{
+	background-color: rgb(250, 250, 250);
+}
+
+#title{
+	background-color: rgb(250, 250, 250);
+}
+
+#subheading{
+	background-color: rgb(250, 250, 250);
+}
+
 #menuCenter .QPushButton{
 	background-color: rgb(0, 226, 109);
 	color: rgb(255, 255, 255);
@@ -30,7 +47,7 @@ LIGHT = """
 """
 
 DARK = """
-#frame{
+QWidget{
 	background-color: rgb(25, 25, 25);
 	
 }
@@ -38,6 +55,23 @@ DARK = """
 	background-color: rgb(35, 35, 35);
 	border-radius: 10px;
 }
+
+#menuCenter{
+	background-color: rgb(35, 35, 35)
+}
+
+#menuTop{
+	background-color: rgb(35, 35, 35)
+}
+
+#title{
+	background-color: rgb(35, 35, 35)
+}
+
+#subheading{
+	background-color: rgb(35, 35, 35)
+}
+
 #menuLateral .QLabel{
 	color: rgb(255, 255, 255);
 }
@@ -62,4 +96,5 @@ DARK = """
 	height: 32px;
 	width: 32px
 }
+
 """
