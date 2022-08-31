@@ -39,6 +39,12 @@ QWidget{
 	border-radius: 4px;	
 }
 
+#menuCenter .QPushButton:pressed{
+	background-color: red;
+	color:rgb(0,0,0);
+	border-radius: 4px;	
+}
+
 #themeBtn{
 	background: rgba(255, 255, 255, 0);
 	border:0 px solid rgb(255,255,255);
