@@ -40,8 +40,8 @@ QWidget{
 }
 
 #menuCenter .QPushButton:pressed{
-	background-color: red;
-	color:rgb(0,0,0);
+	background-color: rgb(0, 255, 162);
+	color:rgb(255, 255, 255);
 	border-radius: 4px;	
 }
 
@@ -77,7 +77,8 @@ QWidget{
 }
 
 #subheading{
-	background-color: rgb(35, 35, 35)
+	background-color: rgb(35, 35, 35);
+	color: rgb(180, 180, 180)
 }
 
 #menuLateral .QLabel{
@@ -93,9 +94,14 @@ QWidget{
 }
 
 #menuCenter .QPushButton:hover{
-	background-color:rgb(243, 243, 243);
+	background-color: rgb(0, 255, 127);
 	color:rgb(0, 68, 32);
 	border-radius: 4px;	
+}
+
+#menuCenter .QPushButton:pressed{	
+	background-color: rgb(0, 255, 162);
+	color:rgb(255, 255, 255);
 }
 
 #themeBtn{

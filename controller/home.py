@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QHeaderView
+from PyQt5.QtWidgets import QWidget
 from PyQt5 import uic
 
 FILE_UI = 'view/home.ui'

@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QHeaderView
 from PyQt5 import uic
 from controller.home import Home
+from controller.ui_Receita import Receita_ui
+from controller.ui_Despesa import Despesa_ui
 
 from theme.app_theme import LIGHT, DARK
 
@@ -15,9 +17,8 @@ class MainWindow(QMainWindow):
         self.setStyleSheet(LIGHT)
         
         self.pageHome = Home()
-        #self.pageReceita = 
-        #self.pageDespesa = 
-        
+        self.pageReceita = Receita_ui()
+        self.pageDespesa = Despesa_ui()
         
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageReceita)
@@ -38,11 +39,11 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
         if btnName == "homeBtn":
-            self.stackedWidget.setCurrentIndex(1)
+            self.stackedWidget.setCurrentIndex(0)
         if btnName == "receitaBtn":
-            self.stackedWidget.setCurrentIndex(2)
+            self.stackedWidget.setCurrentIndex(1)
         if btnName == "despesaBtn":
-            self.stackedWidget.setCurrentIndex(3)
+            self.stackedWidget.setCurrentIndex(2)
         
         if btnName == 'themeBtn':
             self.checkButton()
