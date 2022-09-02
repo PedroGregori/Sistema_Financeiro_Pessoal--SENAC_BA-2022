@@ -7,5 +7,3 @@ app.setStyle('Fusion')
 janela = MainWindow()
 janela.show()
 app.exec() 
-
-

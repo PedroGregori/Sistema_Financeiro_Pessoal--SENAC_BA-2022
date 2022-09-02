@@ -39,8 +39,8 @@ class Depesa_dao():
         SQL = "SELECT * FROM despesas;"
         cursor.execute(SQL)
         return_list = cursor.fetchall()
-        for c  in return_list:
-            nova_despesa = d_OBJ([0],[1],[2])
+        for d  in return_list:
+            nova_despesa = d_OBJ(d[0],d[1],d[2])
             despesas_lst.append(nova_despesa)
                 
         conn.close()

@@ -69,7 +69,7 @@ class Receita_ui(QWidget):
         
         id = QTableWidgetItem(str(r.id))
         descricao = QTableWidgetItem(r.descricao)
-        valor = QTableWidgetItem(r.valor)
+        valor = QTableWidgetItem(str(r.valor))
         
         self.table.setItem(line, 0, id)
         self.table.setItem(line, 1, descricao)
@@ -79,7 +79,7 @@ class Receita_ui(QWidget):
         line = self.table.currentRow()
         
         descricao = QTableWidgetItem(r.descricao)
-        valor = QTableWidgetItem(r.valor)
+        valor = QTableWidgetItem(str(r.valor))
         
         self.table.setItem(line, 1, descricao)
         self.table.setItem(line, 2, valor)

@@ -39,9 +39,9 @@ class Receita_dao():
         SQL = "SELECT * FROM receitas;"
         cursor.execute(SQL)
         return_list = cursor.fetchall()
-        for c  in return_list:
-            nova_despesa = r_OBJ([0],[1],[2])
-            receitas_lst.append(nova_despesa)
+        for r  in return_list:
+            nova_receita = r_OBJ(r[0],r[1],r[2])
+            receitas_lst.append(nova_receita)
                 
         conn.close()
             
