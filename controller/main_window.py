@@ -18,11 +18,11 @@ class MainWindow(QMainWindow):
         
         self.pageHome = Home()
         self.pageReceita = Receita_ui()
-        self.pageDespesa = Despesa_ui()
+        #self.pageDespesa = Despesa_ui()
         
         self.stackedWidget.addWidget(self.pageHome)
         self.stackedWidget.addWidget(self.pageReceita)
-        self.stackedWidget.addWidget(self.pageDespesa)
+        #self.stackedWidget.addWidget(self.pageDespesa)
         
         self.homeBtn.clicked.connect(self.actionMenu)
         self.receitaBtn.clicked.connect(self.actionMenu)
