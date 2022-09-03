@@ -19,10 +19,6 @@ class Receita_ui(QWidget):
         self.table.horizontalHeader().setSectionResizeMode( 
             QHeaderView.Stretch)
         
-        self.table.horizontalHeader().setStretchLastSection(True) 
-        self.table.horizontalHeader().setSectionResizeMode( 
-            QHeaderView.Stretch) 
-        
         self.loadData()
 
     def loadData(self):
@@ -83,7 +79,3 @@ class Receita_ui(QWidget):
         
         self.table.setItem(line, 1, descricao)
         self.table.setItem(line, 2, valor)
-        
-        
-        
-        

@@ -51,9 +51,9 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="total">
            <property name="text">
-            <string>Descrição</string>
+            <string>Lucro/prejuízo</string>
            </property>
           </widget>
          </item>
@@ -70,9 +70,9 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="total_receita">
            <property name="text">
-            <string>Receitas</string>
+            <string>Total de Receitas</string>
            </property>
           </widget>
          </item>
@@ -89,9 +89,9 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="total_despesa">
            <property name="text">
-            <string>Despesas</string>
+            <string>Total de Despesas</string>
            </property>
           </widget>
          </item>
@@ -109,7 +109,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>274</height>
       </size>
      </property>
     </spacer>

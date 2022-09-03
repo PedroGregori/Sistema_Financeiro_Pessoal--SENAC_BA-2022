@@ -15,8 +15,8 @@ class Despesa_ui(QWidget):
         self.editBtn.clicked.connect(self.edit)
         self.delBtn.clicked.connect(self.delete)
         
-        self.tabela.horizontalHeader().setStretchLastSection(True) 
-        self.tabela.horizontalHeader().setSectionResizeMode( 
+        self.table.horizontalHeader().setStretchLastSection(True) 
+        self.table.horizontalHeader().setSectionResizeMode( 
             QHeaderView.Stretch) 
         
         self.loadData()
@@ -29,12 +29,53 @@ class Despesa_ui(QWidget):
     def add(self):
         descricao = self.descricao.text()
         valor = self.valor.text()
+        valor = valor.replace(",", ".")
         nova_despesa = d_OBJ(-1,descricao, float(valor))
         id = d_DAO.add(nova_despesa)
         nova_despesa.id = id 
+        
+        self.addTableWidget(nova_despesa)
+        
+        self.descricao.clear()
     
-    def edit():
-        pass
+    def edit(self):
+        line = self.table.currentRow()
+        lineItem = self.table.item(line, 0)
+        
+        id = lineItem.text()
+        descricao = self.descricao.text()
+        valor = self.valod.text()
+        
+        edit = d_OBJ(id,descricao,valor)
+        d_DAO.edit(edit)
+        self.updateTable(edit)
+
+        self.descricao.clear()
     
-    def delete():
-        pass
+    def delete(self):
+        line = self.table.currentRow()
+        lineItem = self.table.item(line, 0)
+        id  = lineItem.text()
+        self.table.removeRow(line)
+        d_DAO.delete(int(id))
+    
+    def addTableWidget(self, d: d_OBJ):
+        line = self.table.rowCount()
+        self.table.insertRow(line)
+        
+        id = QTableWidgetItem(str(d.id))
+        descricao = QTableWidgetItem(d.descricao)
+        valor = QTableWidgetItem(str(d.valor))
+        
+        self.table.setItem(line, 0, id)
+        self.table.setItem(line, 1, descricao)
+        self.table.setItem(line, 2, valor)
+        
+    def updateTable(self, d: d_OBJ):
+        line = self.table.currentRow()
+        
+        descricao = QTableWidgetItem(d.descricao)
+        valor = QTableWidgetItem(str(d.valor))
+        
+        self.table.setItem(line, 1, descricao)
+        self.table.setItem(line, 2, valor)
