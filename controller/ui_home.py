@@ -49,6 +49,3 @@ class Home_ui(QWidget):
             self.total.setText(f"Prejuízo de R$ {calc}")
         else:
             self.total.setText(f"Lucro de R$ {calc}")
-        print(calc)
-    def update(self):
-        return "s"
