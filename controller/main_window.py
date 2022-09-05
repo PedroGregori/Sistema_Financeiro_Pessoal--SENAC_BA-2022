@@ -24,13 +24,17 @@ class MainWindow(QMainWindow):
         self.stackedWidget.addWidget(self.pageDespesa)
         
         self.homeBtn.clicked.connect(self.actionMenu)
+        self.homeBtn.clicked.connect(self.updateHome)
         self.receitaBtn.clicked.connect(self.actionMenu)
         self.despesaBtn.clicked.connect(self.actionMenu)
         self.themeBtn.clicked.connect(self.actionMenu)
         
-    def updateHome(self,action):
-        btn = self.homeBtn.clicked.connect(action)
-        return btn
+    def updateHome(self):
+        a = Home_ui.update("x")
+        if a == "x":
+            print("ee")
+        else:
+            print("ooo")
     
     def checkButton(self):
         if self.themeBtn.isChecked():
@@ -43,12 +47,10 @@ class MainWindow(QMainWindow):
         btnName = btn.objectName()
         if btnName == "homeBtn":
             self.stackedWidget.setCurrentIndex(0)
-            self.updateHome()
         if btnName == "receitaBtn":
             self.stackedWidget.setCurrentIndex(1)
         if btnName == "despesaBtn":
             self.stackedWidget.setCurrentIndex(2)
 
-        
         if btnName == 'themeBtn':
             self.checkButton()

@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5 import uic
 
 from model.homeDAO import Home_dao as h_DAO
-from controller.main_window import MainWindow
+
 
 FILE_UI = 'view/home.ui'
 
@@ -10,6 +10,7 @@ class Home_ui(QWidget):
     def __init__(self):
         super(Home_ui, self).__init__()
         uic.loadUi(FILE_UI, self)  
+        #self.mainWindow = mainWindow
         
         self.aviso()
         
@@ -22,12 +23,23 @@ class Home_ui(QWidget):
         return valor[0] [0]
         
     def calc(self):
-        calc = (self.r_total()-self.d_total())
+        receitas = self.r_total()
+        despesas = self.d_total()
+        if despesas == None:
+            despesas = 0
+        elif receitas == None:
+            receitas = 0
+        calc = receitas - despesas
         return calc
     
     def aviso(self):
         receitas = self.r_total()
         despesas = self.d_total()
+        if despesas == None:
+            despesas = 0
+        elif receitas == None:
+            receitas = 0
+        
         calc = self.calc()
         
         self.total_receita.setText(f"Total de Receitas R$ {receitas}")
@@ -37,8 +49,6 @@ class Home_ui(QWidget):
             self.total.setText(f"Prejuízo de R$ {calc}")
         else:
             self.total.setText(f"Lucro de R$ {calc}")
-    
+        print(calc)
     def update(self):
-        update = self.aviso()
-        btn = MainWindow.updateHome(update)
-        return btn
+        return "s"
